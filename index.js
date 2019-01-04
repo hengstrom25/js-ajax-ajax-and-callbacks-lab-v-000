@@ -10,8 +10,8 @@ function searchRepositories() {
   )
 }
 
-function displayRepositories() {
-  return data.items.map(repo => renderRepositories(repo));
+function displayRepositories(data) {
+   return data.items.map( repo => renderRepositories(repo));
 }
 
 function showCommits(el) {
