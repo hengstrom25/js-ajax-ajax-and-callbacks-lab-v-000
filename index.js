@@ -14,5 +14,15 @@ function displayRepositories() {
   return data.items.map(repo => renderRepositories(repo));
 }
 
+function showCommits(el) {
+  const owner = el.dataset.owner;
+  const repo  = el.dataset.repository;
+  $.get(`https://api.github.com/repos/${owner}/${repo}/commits`).done(function(data) {
+     $('#details').html(renderCommits(data));
+   }).fail(function(error) {
+     displayError(error);
+  });
+}
+
 
 
