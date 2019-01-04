@@ -14,7 +14,15 @@ function displayRepositories(data) {
    return data.items.map( repo => renderRepositories(repo));
 }
 
-
+function renderRepositories(repo) {
+  return `
+  <li>
+    Name: ${repo.name}<br>
+    Description: ${repo.description}<br>
+    URL: <a href="${repo.html_url}">${repo.html_url}</a><br>
+    <a href="#" data-repository="${repo.name}" data-owner="${repo.owner.login}"
+    onclick="showCommits(this)">Show Commits</a><br></br>`;
+}
 
 function showCommits(el) {
   const owner = el.dataset.owner;
