@@ -24,5 +24,7 @@ function showCommits(el) {
   });
 }
 
-
+function displayError(error) {
+  $('#errors').html("I'm sorry, there's been an error, please try again.");
+}
 
