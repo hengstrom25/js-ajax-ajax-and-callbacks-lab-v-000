@@ -28,3 +28,10 @@ function displayError(error) {
   $('#errors').html("I'm sorry, there's been an error, please try again.");
 }
 
+function renderCommit(commit) {
+  return `
+    <li><h3>Sha: ${commit.sha}</h3>
+    <p>Name: ${commit.commit.author.name}</p><br>
+    <p>Login: ${commit.author.login}</p><br>
+    <p>Message: ${commit.commit.message}</p></li>`;
+}
