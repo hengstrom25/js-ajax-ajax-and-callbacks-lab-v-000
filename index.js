@@ -14,6 +14,8 @@ function displayRepositories(data) {
    return data.items.map( repo => renderRepositories(repo));
 }
 
+
+
 function showCommits(el) {
   const owner = el.dataset.owner;
   const repo  = el.dataset.repository;
