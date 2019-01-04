@@ -3,7 +3,8 @@ $(document).ready(function (){
 
 function searchRepositories() {
   const searchTerms = document.getElementById('searchTerms').value
-  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, function(data){$("#results").html(displayRepositories(data));
+  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, function(data){
+    $("#results").html(displayRepositories(data));
   }).fail(error =>
     displayError()
   )
